@@ -1,0 +1,92 @@
+# Optical Fiber Loss Measurement
+
+## 🎯 AIM
+To determine the propagation loss (attenuation loss), bending loss, and connector loss in optical fibers of 1m and 3m.
+
+---
+
+## 🧰 EQUIPMENTS REQUIRED
+- Power supply  
+- Fibre optic trainer kit  
+- Patch chords  
+- 1-meter fiber optic cable  
+- Digital Storage Oscilloscope (DSO)  
+
+---
+
+## 📚 THEORY
+
+- **Attenuation** is the loss of power during transmission. Light pulses lose photons, reducing amplitude.
+- Attenuation is measured in **decibels per kilometer (dB/km)**.
+  - Premium small-core glass fibers: ~1 dB/km  
+  - Large-core plastic fibers: up to 2000 dB/km  
+- Loss is expressed as a negative decibel value, but commonly the sign is omitted.
+
+### 📐 Attenuation Formula
+
+\[
+\alpha \ (\text{dB}) = 10 \cdot \log_{10} \left( \frac{P_i}{P_o} \right)
+\]
+
+Where:  
+- \( \alpha \) = Loss in dB/m  
+- \( P_i \) = Input power  
+- \( P_o \) = Output power  
+
+---
+
+## 🧪 PROCEDURE
+
+### 🔧 Setup
+
+1. Connect the power supply to the board.
+2. Make the following connections:
+   - Function generator’s 1 kHz sine wave output → Input 1 of emitter 1 via 4 mm lead  
+   - 0.5 m optic fiber → emitter 1 output to detector 1 input  
+   - Detector 1 output → amplifier 1 input via 4 mm lead  
+3. Switch on the power supply.
+4. Set Oscilloscope Channel 1 to 0.5 V/Div. Adjust amplitude to 4–6 divisions using X1 probe and variable potentiometer.
+5. Observe output signal from detector TP10 on CRO.
+6. Adjust received signal amplitude to match transmitted signal using gain potentiometer. Note this amplitude as **V₁**.
+7. Replace the 0.5 m cable with a 1 m cable without changing other settings.
+8. Measure the new amplitude at amplifier 1 output (TP28). Note this value as **V₂**.
+
+### 📏 Attenuation Calculation
+
+\[
+\frac{V_1}{V_2} = e^{-\alpha (L_1 + L_2)}
+\]
+
+Where:  
+- \( \alpha \) = Loss in nepers/m  
+- \( 1 \ \text{neper} = 8.686 \ \text{dB} \)  
+- \( L_1 = 0.5 \ \text{m} \), \( L_2 = 1 \ \text{m} \)
+
+---
+
+## 🔁 BENDING LOSS
+
+1. Repeat steps 1–6 from the previous procedure.
+2. Wind the fiber optic cable on a mandrel and observe the AC amplifier output on CRO. A reduction indicates bending loss.
+3. Repeat with loose connections and different fiber lengths to observe variation.
+
+---
+
+## 📊 TABULATION
+
+### 📉 PROPAGATION LOSS
+
+| Time Period | Fiber Length | Input Amplitude (V) | Output Amplitude (V) |
+|-------------|--------------|----------------------|-----------------------|
+| --          |              |                      |                       |
+
+### 🔄 BENDING LOSS
+
+| Time Period | Bending Diameter | Input Amplitude (V) | Output Amplitude (V) |
+|-------------|------------------|----------------------|-----------------------|
+| --          |                  |                      |                       |
+
+---
+
+## ✅ RESULT
+- Propagation loss, bending loss, and connector loss were successfully measured and tabulated for different fiber lengths and conditions.
